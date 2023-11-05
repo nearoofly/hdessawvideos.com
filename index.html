@@ -1,9 +1,23 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head> 
+<head>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9353048198801946"
      crossorigin="anonymous"></script>
 <link href="https://vjs.zencdn.net/8.6.1/video-js.css" rel="stylesheet" />
+<script src="https://imasdk.googleapis.com/js/sdkloader/ima3.js" async></script>
+
+<link href="https://vjs.zencdn.net/7.14.3/video-js.css" rel="stylesheet">
+<script src="https://vjs.zencdn.net/7.14.3/video.js"></script>
+
+<script>
+  var player = videojs('my-video');
+  player.ima({
+    adTagUrl: 'URL_DE_VOTRE_FICHIER_VAST',
+  });
+</script>
+
+<script src="https://imasdk.googleapis.com/js/sdkloader/ima3.js" async></script>
+
 
   <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
   <!-- <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script> -->
@@ -83,9 +97,6 @@
             <div class="video-card">
                 <video controls width="400">
                     <source src="video2.mp4" type="video/mp4">
-                     <source src="video3.mp4" type="video/mp4">
-                     <source src="video4.mp4" type="video/mp4">
-                    
                     
                     Votre navigateur ne supporte pas la lecture de vidéos.
                 </video>
@@ -183,25 +194,7 @@
 
 
 
-
-
 <script src="https://vjs.zencdn.net/8.6.1/video.min.js"></script>
-
-
-
-
-
-<script>
-  var player = videojs('my-video');
-  player.ima({
-    adTagUrl: 'URL_DE_VOTRE_FICHIER_VAST',
-  });
-</script>
-
-
-
-
-<script src="https://imasdk.googleapis.com/js/sdkloader/ima3.js" async></script>
 
 
 
@@ -227,6 +220,36 @@
               <input type="text" id="cardholder" name="cardholder" required>
                    <label for="cardnumber">Numéro de carte de crédit:</label>
                          <div id="card-element">
+                         
+                         
+                         
+                         
+                         
+                         
+                         <main>
+        <!-- Section vidéo et bouton de paiement -->
+        <section class="video-section">
+            <!-- Vos vidéos... -->
+            <div class="video-card">
+                <!-- Vidéo 1... -->
+            </div>
+            <div class="video-card">
+                <!-- Vidéo 2... -->
+            </div>
+            <!-- Bouton de paiement -->
+            <div class="payment-button">
+                <a href="page_paiement.php">Payer 5 € pour accéder à plus de vidéos</a>
+            </div>
+        </section>
+    </main>
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
                 <!-- Un conteneur pour les informations de carte -->
             </div>
             <div id="card-errors" role="alert"></div>
@@ -285,13 +308,6 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
 
 
 
