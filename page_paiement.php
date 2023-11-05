@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9353048198801946"
-     crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page de Paiement</title>
@@ -11,21 +9,22 @@
 </head>
 <body>
     <div class="payment-form">
-        <h2>Payer 5 euros pour regarder les autre videos</h2>
+        <h2>Payer 5 euros pour accéder à plus de vidéos</h2>
         <form action="process_payment.php" method="post" id="payment-form">
-            <label for="cardholder">Nom du titulaire de la carte:</label>
+            <label for="cardholder">Nom du titulaire de la carte :</label>
             <input type="text" id="cardholder" name="cardholder" required>
-            <label for="cardnumber">Numéro de carte de crédit:</label>
+            <label for="cardnumber">Numéro de carte de crédit :</label>
             <div id="card-element">
-                <!-- Un conteneur pour les informations de carte -->
+                <!-- Conteneur pour les informations de la carte -->
             </div>
             <div id="card-errors" role="alert"></div>
             <input type="hidden" id="amount" name="amount" value="500"> <!-- Montant en centimes (5 euros) -->
             <button type="submit">Payer</button>
         </form>
     </div>
+
     <script>
-        var stripe = Stripe('pk_live_51NID2BAGHCS2IVlyKTnlpEsDpVM20wph80XFEG24VnSlh2JSp1OqHFlutrBHiPxcoOIhYAQdoklbBMRQws3cRC3U00tsrEOTxW'); // Remplacez par votre clé API Stripe
+        var stripe = Stripe('pk_live_51NID2BAGHCS2IVlyKTnlpEsDpVM20wph80XFEG24VnSlh2JSp1OqHFlutrBHiPxcoOIhYAQdoklbBMRQws3cRC3U00tsrEOTxW'); // Remplacez par votre clé API Stripe publique
         var elements = stripe.elements();
 
         var style = {
@@ -35,10 +34,10 @@
             },
         };
 
-        var card = elements.create('card', {style: style});
+        var card = elements.create('card', { style: style });
         card.mount('#card-element');
 
-        card.addEventListener('change', function(event) {
+        card.addEventListener('change', function (event) {
             var displayError = document.getElementById('card-errors');
             if (event.error) {
                 displayError.textContent = event.error.message;
@@ -49,10 +48,10 @@
 
         var form = document.getElementById('payment-form');
 
-        form.addEventListener('submit', function(event) {
+        form.addEventListener('submit', function (event) {
             event.preventDefault();
 
-            stripe.createToken(card).then(function(result) {
+            stripe.createToken(card).then(function (result) {
                 if (result.error) {
                     var errorElement = document.getElementById('card-errors');
                     errorElement.textContent = result.error.message;
